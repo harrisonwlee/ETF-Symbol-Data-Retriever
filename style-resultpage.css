@@ -1,0 +1,28 @@
+h1 {
+	font-family: Helvetica;
+	font-size: 14px;
+	background-color:adebad;
+}
+p {
+	font-family: Helvetica;
+	font-size: 14px;
+	border: 1px;
+	font-weight: bold;
+}
+#results {
+	font-family: Helvetica;
+	font-size: 14px;
+}
+
+#chartdivpie {
+	float: right;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    vertical-align: center;
+	margin-bottom: 10px;
+}

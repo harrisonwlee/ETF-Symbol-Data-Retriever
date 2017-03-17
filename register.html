@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script>
+			url = window.location.href;
+			if (url.includes('error')) {
+				alert('Erro occurred when creating account. This usually means an account with that name or e-mail already exists! Try again with a different username or e-mail.');
+			}
+		</script>
+		<title>
+			Register
+		</title>
+	<link rel = "stylesheet" type = "text/css" href = "style-signin.css"
+	</head>
+	<body id = "body-color">
+		<div id = "Outer" style = "width: 100%">
+			<div id = "Sign-In">
+				<fieldset style = "width: 30%">
+					<legend>
+						Create An Account
+					</legend>
+					<form method = "POST"  name = "registrationform" action = "registered.php" ID = "01">
+						First Name
+						<br/>
+							<input type = "text" name = "firstname" size = "40" id = "firstname">
+						<br/>
+						Last Name
+						<br/>
+							<input type = "text" name = "lastname" size = "40" id = "lastname">
+						<br/>
+						Username
+						<br/>
+							<input type = "text" name = "username" size = "40" id = "user">
+						<br/>
+						Password 
+						<br/>
+							<input type = "password" name = "password" size = "40" id = "pass1">
+						<br/>
+						Confirm Password
+						<br/>
+							<input type = "password" size = "40" id = "pass2">
+						<br/>
+						E-mail Address
+						<br/>
+							<input type = "text" name = "email" size = "40" id = "email1">
+						<br/>
+						Confirm E-mail Address
+						<br/>
+							<input type = "text" size = "40" id = "email2">
+						<br/>
+						<p> 
+							<input type = "submit" 
+								   value = "Register" 
+								   name = "registerform" 
+								   ID = "register" 
+								   style = "float: right" 
+								   onclick = "Check(event);"/>
+							<input type = "hidden" value = "Register" name = "registerform2" ID = "register" action = "registered.php"/>
+						</p>						
+					</form>
+				</fieldset>
+			</div>
+		</div>
+		<script>
+			function Redirect(url) {
+				window.event.returnValue = false;
+				window.location.href = url;
+			} 
+			function Check(e) {
+				//e.preventDefault();
+				var error = "";
+				if (document.getElementById("firstname").value.length == 0) {
+					error+="First name cannot be blank.\n"
+				}
+				if (document.getElementById("lastname").value.length == 0) {
+					error+="Last name cannot be blank.\n"
+				}
+				if (document.getElementById("user").value.length == 0){
+					error+="Username cannot be blank.\n"
+				}
+				if (document.getElementById("pass1").value.length == 0) {
+					error+="Password cannot be blank.\n"
+				}
+				if (document.getElementById("email1").value.length == 0) {
+					error+="E-mail address cannot be blank.\n"
+				}
+				if (document.getElementById("pass1").value != document.getElementById("pass2").value) {
+					error+="Passwords do not match!\n";
+				}
+				if (document.getElementById("email1").value != document.getElementById("email2").value) {
+					error+="E-mails do not match!\n";
+				} 
+				if (error.length == 0) {
+					document.forms["01"].submit();
+				}
+				else {
+					alert(error);
+				}
+				
+			}
+		</script>
+	</body>
+</html>

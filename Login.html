@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<script>
+	function Redirect(e, url) {
+		window.event.returnValue = false;
+		e.preventDefault();
+		window.location.href = url;
+	}
+	url = window.location.href;
+	if (url.includes('invalid')) {
+		alert("Login information incorrect. Please try again.");
+	}
+</script>
+<html>
+<!--
+Author: Harrison W. Lee
+Purpose: Displays login page
+		 Redirects to either registration page or successfully logs in pending user choice
+		 If log in information is incorrect, displays pop up that informs user to try again
+		 Checks for user and pass in table		 
+-->
+	<head>
+		<title>
+			Sign-In
+		</title>
+	<link rel = "stylesheet" type = "text/css" href = "style-signin.css">
+	</head>
+	<body id = "body-color">
+		<div id = "Outer" style = "width: 100%">
+			<div id = "Sign-In">
+				<fieldset style = "width: 30%">
+					<legend>
+						Sign-In
+					</legend>
+					<form method = "POST"  name = "loginform" action = "authentication.php">
+						Username
+						<br>
+							<input type = "text" name = "username" size = "40">
+						</br>
+						Password 
+						<br>
+							<input type = "password" name = "password" size = "40">
+						</br>
+						<p> 
+							<input type = "submit" value = "Log-In" ID = "login">
+							<input type = "submit" value = "Register" name = "registerform" onclick = "Redirect(event, 'register.html');" ID = "register">
+						</p>						
+					</form>
+				</fieldset>
+			</div>
+		</div>
+
+	</body>
+</html>

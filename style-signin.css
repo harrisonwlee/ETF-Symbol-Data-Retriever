@@ -1,0 +1,39 @@
+/*CSS File for sign in web page*/
+legend {
+	font-weight: bold;
+	font-family: "Verdana";
+	font-size: 13px;
+}
+
+form {
+	font-family: "Verdana";
+	font-size: 12px;
+}
+
+#body-color {
+	background-color:#ffffff;
+}
+
+#Sign-In {
+	margin: auto;
+	margin-top: 150px;
+	vertical-align: middle;
+	border: 1px solid #a1a1a1;
+	padding: 7px 30px;
+	background: #e6e6e6;
+	width: 330px;
+	border-radius: 2px;
+	box-shadow: 2px 2px 2px;
+}
+
+#login {
+	float: right;
+}
+
+#register {
+	float: left;
+}
+
+#ETFsym {
+	float: center;
+}
